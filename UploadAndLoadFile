@@ -1,0 +1,71 @@
+from zeep import Client,Settings
+from zeep.transports import Transport
+from requests.auth import HTTPBasicAuth
+from requests import Session
+from bs4 import BeautifulSoup
+
+###################################################################
+#uploadFileToUcm(document: ns5:DocumentDetails)
+#
+#DocumentDetails(Content: ns6:base64Binary-DataHandler, 
+#                FileName: xsd:string, 
+#                ContentType: xsd:string, 
+#                DocumentTitle: xsd:string, 
+#                DocumentAuthor: xsd:string, 
+#                DocumentSecurityGroup: xsd:string, 
+#                DocumentAccount: xsd:string, 
+#                DocumentName: xsd:string, 
+#                DocumentId: xsd:string)
+#
+####################################################################
+#############################################################################
+#submitJobWithOutput(jobPackageName: xsd:string, 
+#                    jobDefinitionName: xsd:string, 
+#                    callbackURL: xsd:string, 
+#                    paramList: xsd:string[])
+#############################################################################
+
+session = Session()
+session.auth = HTTPBasicAuth("username","password")
+transport = Transport(session=session)
+
+settings=Settings(strict=False,xml_huge_tree=True)
+client=Client('https://<hostname>.<domainname>/fscmService/ErpIntegrationService?wsdl',
+              settings=settings,
+              transport=transport)
+
+with open("FileName.zip",'rb') as zipfile:
+    bFile=zipfile.read()
+
+document={"Content": bFile,
+          "FileName": "FileName.zip",
+          "ContentType": "zip",
+          "DocumentTitle": "Document Title",
+          "DocumentAuthor": "username",
+          "DocumentSecurityGroup": "FAFusionImportExport",
+          "DocumentAccount": "fin$/generalLedger$/import$"
+          }
+
+with client.settings(raw_response=True):
+    response=client.service.uploadFileToUcm(document)
+    if response.status_code == 200:
+        respTxt=response.content.decode('utf-8')
+        bs=BeautifulSoup(respTxt,"html.parser")
+        documentId=bs.result.text
+    else:
+        print("Access Error.")
+    
+jobPackageName="/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader"
+jobDefinitionName="InterfaceLoaderController"
+callbackURL=""
+paramList=["16",documentId,"N","N","#NULL"]
+
+with client.settings(raw_response=True):
+    response=client.service.submitJobWithOutput(jobPackageName,jobDefinitionName,callbackURL,paramList)
+    if response.status_code == 200:
+        respTxt=response.content.decode('utf-8')
+        bs=BeautifulSoup(respTxt,"html.parser")
+        print("ProcessId: "+bs.result.text)
+    else:
+        print("Access Error.")
+    
