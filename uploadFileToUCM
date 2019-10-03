@@ -27,8 +27,10 @@ settings=Settings(strict=False,xml_huge_tree=True)
 client=Client('https://<hostname>.<domainname>/fscmService/ErpIntegrationService?wsdl',
               settings=settings,
               transport=transport)
-
-document={"Content": b'UEsDBBQAAAAIALxdQk9e5+prPgAAAFMAAAAlAAAAR2xTZWdtZW50VmFsdWVzSW50ZXJmYWNlXzIwMTkxMDAyLmNzdoXBoQ3AIBBAUd+kO9wA38AIrSWoGmRJ0EeA7RCMxAqwAe/NPl4tWcvfkjh9MBbwBAi733EaxVj5Um2cyH0tUEsBAj8AFAAAAAgAvF1CT17n6ms+AAAAUwAAACUAJAAAAAAAAAAgAAAAAAAAAEdsU2VnbWVudFZhbHVlc0ludGVyZmFjZV8yMDE5MTAwMi5jc3YKACAAAAAAAAEAGAAxdi6Dy3jVATF2LoPLeNUBpJgYwMt01QFQSwUGAAAAAAEAAQB3AAAAgQAAAAAA',
+with open("GlSegmentValuesInterface_20191003.zip",'rb') as zipfile:
+    bFile=zipfile.read()
+    
+document={"Content": bFile,
           "FileName": "GlSegmentValuesInterface_20191002.zip",
           "ContentType": "zip",
           "DocumentTitle": "GlSegmentValuesInterface",
