@@ -4,12 +4,27 @@ from requests.auth import HTTPBasicAuth
 from requests import Session
 from bs4 import BeautifulSoup
 
+###################################################################
+#uploadFileToUcm(document: ns5:DocumentDetails)
+#
+#DocumentDetails(Content: ns6:base64Binary-DataHandler, 
+#                FileName: xsd:string, 
+#                ContentType: xsd:string, 
+#                DocumentTitle: xsd:string, 
+#                DocumentAuthor: xsd:string, 
+#                DocumentSecurityGroup: xsd:string, 
+#                DocumentAccount: xsd:string, 
+#                DocumentName: xsd:string, 
+#                DocumentId: xsd:string)
+#
+####################################################################
+
 session = Session()
 session.auth = HTTPBasicAuth("username","password")
 transport = Transport(session=session)
 
 settings=Settings(strict=False,xml_huge_tree=True)
-client=Client('https://<hostname>.<domain>/fscmService/ErpIntegrationService?wsdl',
+client=Client('https://<hostname>.<domainname>/fscmService/ErpIntegrationService?wsdl',
               settings=settings,
               transport=transport)
 
