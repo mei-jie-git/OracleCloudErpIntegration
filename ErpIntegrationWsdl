@@ -1,0 +1,296 @@
+
+Prefixes:
+     xsd: http://www.w3.org/2001/XMLSchema
+     ns0: http://xmlns.oracle.com/adf/svc/errors/
+     ns1: commonj.sdo/java
+     ns2: commonj.sdo
+     ns3: http://xmlns.oracle.com/oracleas/schema/oracle-fault-11_0
+     ns4: http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/types/
+     ns5: http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/
+     ns6: http://xmlns.oracle.com/adf/svc/types/
+     ns7: commonj.sdo/xml
+
+Global elements:
+     ns2:dataObject(None)
+     ns2:datagraph(ns2:DataGraphType)
+     ns2:type(ns2:Type)
+     ns2:types(ns2:Types)
+     
+     ns0:ServiceErrorMessage(ns0:ServiceErrorMessage)
+     ns6:findControl(ns6:FindControl)
+     ns6:findCriteria(ns6:FindCriteria)
+     ns6:processControl(ns6:ProcessControl)
+     ns4:appendFileComment(documentId: xsd:string, comments: xsd:string)
+     ns4:appendFileCommentAsync(documentId: xsd:string, comments: xsd:string)
+     ns4:appendFileCommentAsyncResponse()
+     ns4:appendFileCommentResponse()
+     ns4:confirmExtractConsumption(jobName: xsd:string, documentIDs: xsd:string[])
+     ns4:confirmExtractConsumptionAsync(jobName: xsd:string, documentIDs: xsd:string[])
+     ns4:confirmExtractConsumptionAsyncResponse(result: xsd:string)
+     ns4:confirmExtractConsumptionResponse(result: xsd:string)
+     ns4:downloadESSJobExecutionDetails(requestId: xsd:string, fileType: xsd:string)
+     ns4:downloadESSJobExecutionDetailsAsync(requestId: xsd:string, fileType: xsd:string)
+     ns4:downloadESSJobExecutionDetailsAsyncResponse(result: ns5:DocumentDetails[])
+     ns4:downloadESSJobExecutionDetailsResponse(result: ns5:DocumentDetails[])
+     ns4:downloadExportOutput(requestId: xsd:string)
+     ns4:downloadExportOutputAsync(requestId: xsd:string)
+     ns4:downloadExportOutputAsyncResponse(result: ns5:DocumentDetails[])
+     ns4:downloadExportOutputResponse(result: ns5:DocumentDetails[])
+     ns4:exportBulkData(jobName: xsd:string, parameterList: xsd:string, jobOptions: xsd:string, callbackURL: xsd:string, notificationCode: xsd:string)
+     ns4:exportBulkDataAsync(jobName: xsd:string, parameterList: xsd:string, jobOptions: xsd:string, callbackURL: xsd:string, notificationCode: xsd:string)
+     ns4:exportBulkDataAsyncResponse(result: xsd:long)
+     ns4:exportBulkDataResponse(result: xsd:long)
+     ns4:extractAndPurge(requestIds: xsd:string, notificationCode: xsd:string, callbackURL: xsd:string, jobOptions: xsd:string)
+     ns4:extractAndPurgeAsync(requestIds: xsd:string, notificationCode: xsd:string, callbackURL: xsd:string, jobOptions: xsd:string)
+     ns4:extractAndPurgeAsyncResponse(result: xsd:long)
+     ns4:extractAndPurgeResponse(result: xsd:long)
+     ns4:getDfltObjAttrHints(viewName: xsd:string, localeName: xsd:string)
+     ns4:getDfltObjAttrHintsAsync(viewName: xsd:string, localeName: xsd:string)
+     ns4:getDfltObjAttrHintsAsyncResponse(result: ns6:ObjAttrHints)
+     ns4:getDfltObjAttrHintsResponse(result: ns6:ObjAttrHints)
+     ns4:getDocumentForDocumentId(DocumentId: xsd:string)
+     ns4:getDocumentForDocumentIdAsync(DocumentId: xsd:string)
+     ns4:getDocumentForDocumentIdAsyncResponse(result: ns5:DocumentDetails)
+     ns4:getDocumentForDocumentIdResponse(result: ns5:DocumentDetails)
+     ns4:getDocumentIdsForFilePrefix(prefix: xsd:string, account: xsd:string, comments: xsd:string)
+     ns4:getDocumentIdsForFilePrefixAsync(prefix: xsd:string, account: xsd:string, comments: xsd:string)
+     ns4:getDocumentIdsForFilePrefixAsyncResponse(result: xsd:string[])
+     ns4:getDocumentIdsForFilePrefixResponse(result: xsd:string[])
+     ns4:getDocumentsForFilePrefix(prefix: xsd:string, account: xsd:string, comments: xsd:string)
+     ns4:getDocumentsForFilePrefixAsync(prefix: xsd:string, account: xsd:string, comments: xsd:string)
+     ns4:getDocumentsForFilePrefixAsyncResponse(result: ns5:DocumentDetails[])
+     ns4:getDocumentsForFilePrefixResponse(result: ns5:DocumentDetails[])
+     ns4:getESSExecutionDetails(requestId: xsd:long, jobOptions: xsd:string)
+     ns4:getESSExecutionDetailsAsync(requestId: xsd:long, jobOptions: xsd:string)
+     ns4:getESSExecutionDetailsAsyncResponse(result: xsd:string)
+     ns4:getESSExecutionDetailsResponse(result: xsd:string)
+     ns4:getESSJobStatus(requestId: xsd:long)
+     ns4:getESSJobStatusAsync(requestId: xsd:long)
+     ns4:getESSJobStatusAsyncResponse(result: xsd:string)
+     ns4:getESSJobStatusResponse(result: xsd:string)
+     ns4:getEntityList()
+     ns4:getEntityListAsync()
+     ns4:getEntityListAsyncResponse(result: ns6:ServiceViewInfo[])
+     ns4:getEntityListResponse(result: ns6:ServiceViewInfo[])
+     ns4:getServiceLastUpdateTime()
+     ns4:getServiceLastUpdateTimeAsync()
+     ns4:getServiceLastUpdateTimeAsyncResponse(result: ns6:dateTime-Timestamp)
+     ns4:getServiceLastUpdateTimeResponse(result: ns6:dateTime-Timestamp)
+     ns4:importBulkData(document: ns5:DocumentDetail, jobDetails: ns5:EssJob[], notificationCode: xsd:string, callbackURL: xsd:string, jobOptions: xsd:string)
+     ns4:importBulkDataAsync(document: ns5:DocumentDetail, jobDetails: ns5:EssJob[], notificationCode: xsd:string, callbackURL: xsd:string, jobOptions: xsd:string)
+     ns4:importBulkDataAsyncResponse(result: xsd:long)
+     ns4:importBulkDataResponse(result: xsd:long)
+     ns4:loadAndImportData(document: ns5:DocumentDetails, jobList: ns5:EssJob[], interfaceDetails: xsd:string, notificationCode: xsd:string, callbackURL: xsd:string)
+     ns4:loadAndImportDataAsync(document: ns5:DocumentDetails, jobList: ns5:EssJob[], interfaceDetails: xsd:string, notificationCode: xsd:string, callbackURL: xsd:string)
+     ns4:loadAndImportDataAsyncResponse(result: xsd:long)
+     ns4:loadAndImportDataResponse(result: xsd:long)
+     ns4:submitESSJobRequest(jobPackageName: xsd:string, jobDefinitionName: xsd:string, paramList: xsd:string[])
+     ns4:submitESSJobRequestAsync(jobPackageName: xsd:string, jobDefinitionName: xsd:string, paramList: xsd:string[])
+     ns4:submitESSJobRequestAsyncResponse(result: xsd:long)
+     ns4:submitESSJobRequestResponse(result: xsd:long)
+     ns4:submitJobWithOutput(jobPackageName: xsd:string, jobDefinitionName: xsd:string, callbackURL: xsd:string, paramList: xsd:string[])
+     ns4:submitJobWithOutputAsync(jobPackageName: xsd:string, jobDefinitionName: xsd:string, callbackURL: xsd:string, paramList: xsd:string[])
+     ns4:submitJobWithOutputAsyncResponse(result: xsd:long)
+     ns4:submitJobWithOutputResponse(result: xsd:long)
+     ns4:updateInterfaceData(processName: xsd:string, loadRequestId: xsd:string, document: ns6:base64Binary-DataHandler)
+     ns4:updateInterfaceDataAsync(processName: xsd:string, loadRequestId: xsd:string, document: ns6:base64Binary-DataHandler)
+     ns4:updateInterfaceDataAsyncResponse()
+     ns4:updateInterfaceDataResponse()
+     ns4:uploadFileToUcm(document: ns5:DocumentDetails)
+     ns4:uploadFileToUcmAsync(document: ns5:DocumentDetails)
+     ns4:uploadFileToUcmAsyncResponse(result: xsd:string)
+     ns4:uploadFileToUcmResponse(result: xsd:string)
+     ns5:documentDetail(ns5:DocumentDetail)
+     ns5:documentDetails(ns5:DocumentDetails)
+     ns5:essJob(ns5:EssJob)
+     ns3:Fault(ns3:FaultType)
+
+Global types:
+     xsd:anyType
+     ns1:BooleanObject
+     ns1:ByteObject
+     ns1:CharacterObject
+     ns1:DoubleObject
+     ns1:FloatObject
+     ns1:IntObject
+     ns1:JavaInfo(javaClass: ns2:String)
+     ns1:LongObject
+     ns1:ShortObject
+     ns7:XMLInfo(xmlElement: ns2:Boolean)
+     ns2:BaseDataGraphType(models: ns2:ModelsType, xsd: ns2:XSDType, changeSummary: ns2:ChangeSummaryType, _attr_1: {})
+     ns2:Boolean
+     ns2:Byte
+     ns2:Bytes
+     ns2:ChangeSummaryType(_value_1: ANY[], create: xsd:string, delete: xsd:string, logging: xsd:boolean)
+     ns2:Character
+     ns2:DataGraphType(models: ns2:ModelsType, xsd: ns2:XSDType, changeSummary: ns2:ChangeSummaryType, _value_1: ANY, _attr_1: {})
+     ns2:DataObject()
+     ns2:Date
+     ns2:DateTime
+     ns2:Day
+     ns2:Decimal
+     ns2:Double
+     ns2:Duration
+     ns2:Float
+     ns2:Int
+     ns2:Integer
+     ns2:Long
+     ns2:ModelsType(_value_1: ANY[])
+     ns2:Month
+     ns2:MonthDay
+     ns2:Property(aliasName: ns2:String[], _value_1: ANY[], name: ns2:String, many: ns2:Boolean, containment: ns2:Boolean, default: ns2:String, readOnly: ns2:Boolean, type: ns2:URI, opposite: ns2:URI, nullable: ns2:Boolean, _attr_1: {})
+     ns2:Short
+     ns2:String
+     ns2:Strings
+     ns2:TextType(text: xsd:string[])
+     ns2:Time
+     ns2:Type(baseType: ns2:URI[], property: ns2:Property[], aliasName: ns2:String[], _value_1: ANY[], name: xsd:ID, uri: ns2:URI, dataType: ns2:Boolean, open: ns2:Boolean, sequenced: ns2:Boolean, abstract: ns2:Boolean, _attr_1: {})
+     ns2:Types(type: ns2:Type[])
+     ns2:URI
+     ns2:XSDType(_value_1: ANY[])
+     ns2:Year
+     ns2:YearMonth
+     ns2:YearMonthDay
+     xsd:ENTITIES
+     xsd:ENTITY
+     xsd:ID
+     xsd:IDREF
+     xsd:IDREFS
+     xsd:NCName
+     xsd:NMTOKEN
+     xsd:NMTOKENS
+     xsd:NOTATION
+     xsd:Name
+     xsd:QName
+     xsd:anySimpleType
+     xsd:anyURI
+     xsd:base64Binary
+     xsd:boolean
+     xsd:byte
+     xsd:date
+     xsd:dateTime
+     xsd:decimal
+     xsd:double
+     xsd:duration
+     xsd:float
+     xsd:gDay
+     xsd:gMonth
+     xsd:gMonthDay
+     xsd:gYear
+     xsd:gYearMonth
+     xsd:hexBinary
+     xsd:int
+     xsd:integer
+     xsd:language
+     xsd:long
+     xsd:negativeInteger
+     xsd:nonNegativeInteger
+     xsd:nonPositiveInteger
+     xsd:normalizedString
+     xsd:positiveInteger
+     xsd:short
+     xsd:string
+     xsd:time
+     xsd:token
+     xsd:unsignedByte
+     xsd:unsignedInt
+     xsd:unsignedLong
+     xsd:unsignedShort
+     ns0:ServiceAttrValErrorMessage(code: xsd:string, message: xsd:string, severity: xsd:string, detail: ns0:ServiceMessage[], sdoObject: None, exceptionClassName: xsd:string, attributeName: xsd:string, attributeValue: xsd:anySimpleType, objectName: xsd:string)
+     ns0:ServiceDMLErrorMessage(code: xsd:string, message: xsd:string, severity: xsd:string, detail: ns0:ServiceMessage[], sdoObject: None, exceptionClassName: xsd:string, operation: xsd:string, statement: xsd:string)
+     ns0:ServiceErrorMessage(code: xsd:string, message: xsd:string, severity: xsd:string, detail: ns0:ServiceMessage[], sdoObject: None, exceptionClassName: xsd:string)
+     ns0:ServiceMessage(code: xsd:string, message: xsd:string, severity: xsd:string, detail: ns0:ServiceMessage[])
+     ns0:ServiceRowValErrorMessage(code: xsd:string, message: xsd:string, severity: xsd:string, detail: ns0:ServiceMessage[], sdoObject: None, exceptionClassName: xsd:string, objectName: xsd:string)
+     ns6:AmountType(xsd:decimal, currencyCode: xsd:normalizedString)
+     ns6:AttrCtrlHints(attrName: xsd:string, ctrlHint: ns6:CtrlHint[])
+     ns6:BigDecimalResult(Message: ns0:ServiceMessage[], Value: xsd:decimal[])
+     ns6:BigIntegerResult(Message: ns0:ServiceMessage[], Value: xsd:integer[])
+     ns6:BooleanResult(Message: ns0:ServiceMessage[], Value: xsd:boolean[])
+     ns6:ByteResult(Message: ns0:ServiceMessage[], Value: xsd:byte[])
+     ns6:BytesResult(Message: ns0:ServiceMessage[], Value: xsd:hexBinary[])
+     ns6:ChangeOperation
+     ns6:ChildFindCriteria(fetchStart: xsd:int, fetchSize: xsd:int, filter: ns6:ViewCriteria, sortOrder: ns6:SortOrder, findAttribute: xsd:string[], excludeAttribute: xsd:boolean, childFindCriteria: ns6:ChildFindCriteria[], childAttrName: xsd:string)
+     ns6:Conjunction
+     ns6:CtrlHint(key: xsd:string, value: xsd:anySimpleType)
+     ns6:DataHandlerResult(Message: ns0:ServiceMessage[], Value: ns6:base64Binary-DataHandler[])
+     ns6:DataObjectResult(Message: ns0:ServiceMessage[], Value: None[])
+     ns6:DateResult(Message: ns0:ServiceMessage[], Value: xsd:date[])
+     ns6:DoubleResult(Message: ns0:ServiceMessage[], Value: xsd:double[])
+     ns6:FindControl(retrieveAllTranslations: xsd:boolean)
+     ns6:FindCriteria(fetchStart: xsd:int, fetchSize: xsd:int, filter: ns6:ViewCriteria, sortOrder: ns6:SortOrder, findAttribute: xsd:string[], excludeAttribute: xsd:boolean, childFindCriteria: ns6:ChildFindCriteria[])
+     ns6:FloatResult(Message: ns0:ServiceMessage[], Value: xsd:float[])
+     ns6:IntegerResult(Message: ns0:ServiceMessage[], Value: xsd:int[])
+     ns6:LongResult(Message: ns0:ServiceMessage[], Value: xsd:long[])
+     ns6:MeasureType(xsd:decimal, unitCode: xsd:normalizedString)
+     ns6:MethodResult(Message: ns0:ServiceMessage[])
+     ns6:ObjAttrHints(objHint: ns6:CtrlHint[], attrHints: ns6:AttrCtrlHints[])
+     ns6:ProcessControl(returnMode: ns6:ReturnMode, exceptionReturnMode: ns6:ReturnMode, partialFailureAllowed: xsd:boolean)
+     ns6:ReturnMode
+     ns6:ServiceViewInfo(name: xsd:string, typeName: xsd:string, canCreate: xsd:boolean, canUpdate: xsd:boolean, canMerge: xsd:boolean, canDelete: xsd:boolean)
+     ns6:ShortResult(Message: ns0:ServiceMessage[], Value: xsd:short[])
+     ns6:SortAttribute(name: xsd:string, descending: xsd:boolean)
+     ns6:SortOrder(sortAttribute: ns6:SortAttribute[])
+     ns6:StringResult(Message: ns0:ServiceMessage[], Value: xsd:string[])
+     ns6:TimeResult(Message: ns0:ServiceMessage[], Value: xsd:time[])
+     ns6:TimestampResult(Message: ns0:ServiceMessage[], Value: xsd:dateTime[])
+     ns6:ViewCriteria(conjunction: ns6:Conjunction, group: ns6:ViewCriteriaRow[], nested: ns6:ViewCriteria[])
+     ns6:ViewCriteriaItem(conjunction: ns6:Conjunction, upperCaseCompare: xsd:boolean, attribute: xsd:string, operator: xsd:string, ({value: xsd:anySimpleType[]} | {nested: ns6:ViewCriteria}))
+     ns6:ViewCriteriaRow(conjunction: ns6:Conjunction, upperCaseCompare: xsd:boolean, item: ns6:ViewCriteriaItem[])
+     ns6:base64Binary-DataHandler
+     ns6:date-Date
+     ns6:dateTime-Timestamp
+     ns6:time-Time
+     ns5:DocumentDetail(Content: ns6:base64Binary-DataHandler, FileName: xsd:string, ContentType: xsd:string, DocumentTitle: xsd:string, DocumentAuthor: xsd:string, DocumentSecurityGroup: xsd:string, DocumentAccount: xsd:string, DocumentName: xsd:string, DocumentId: xsd:string)
+     ns5:DocumentDetails(Content: ns6:base64Binary-DataHandler, FileName: xsd:string, ContentType: xsd:string, DocumentTitle: xsd:string, DocumentAuthor: xsd:string, DocumentSecurityGroup: xsd:string, DocumentAccount: xsd:string, DocumentName: xsd:string, DocumentId: xsd:string)
+     ns5:EssJob(JobName: xsd:string, ParameterList: xsd:string, JobRequestId: xsd:string)
+     ns3:FaultType(faultcode: xsd:QName, faultstring: xsd:string, faultactor: xsd:anyURI, detail: ns3:detail)
+     ns3:detail(_value_1: ANY[], _attr_1: {})
+
+Bindings:
+     Soap11Binding: {http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/}ErpIntegrationServiceResponseBinding
+     Soap11Binding: {http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/}ErpIntegrationServiceSoapHttp
+
+Service: ErpIntegrationService
+     Port: ErpIntegrationServiceSoapHttpPort (Soap11Binding: {http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/}ErpIntegrationServiceSoapHttp)
+         Operations:
+            appendFileComment(documentId: xsd:string, comments: xsd:string) -> 
+            appendFileCommentAsync(documentId: xsd:string, comments: xsd:string)
+            confirmExtractConsumption(jobName: xsd:string, documentIDs: xsd:string[]) -> result: xsd:string
+            confirmExtractConsumptionAsync(jobName: xsd:string, documentIDs: xsd:string[])
+            downloadESSJobExecutionDetails(requestId: xsd:string, fileType: xsd:string) -> result: ns5:DocumentDetails[]
+            downloadESSJobExecutionDetailsAsync(requestId: xsd:string, fileType: xsd:string)
+            downloadExportOutput(requestId: xsd:string) -> result: ns5:DocumentDetails[]
+            downloadExportOutputAsync(requestId: xsd:string)
+            exportBulkData(jobName: xsd:string, parameterList: xsd:string, jobOptions: xsd:string, callbackURL: xsd:string, notificationCode: xsd:string) -> result: xsd:long
+            exportBulkDataAsync(jobName: xsd:string, parameterList: xsd:string, jobOptions: xsd:string, callbackURL: xsd:string, notificationCode: xsd:string)
+            extractAndPurge(requestIds: xsd:string, notificationCode: xsd:string, callbackURL: xsd:string, jobOptions: xsd:string) -> result: xsd:long
+            extractAndPurgeAsync(requestIds: xsd:string, notificationCode: xsd:string, callbackURL: xsd:string, jobOptions: xsd:string)
+            getDfltObjAttrHints(viewName: xsd:string, localeName: xsd:string) -> result: ns6:ObjAttrHints
+            getDfltObjAttrHintsAsync(viewName: xsd:string, localeName: xsd:string)
+            getDocumentForDocumentId(DocumentId: xsd:string) -> result: ns5:DocumentDetails
+            getDocumentForDocumentIdAsync(DocumentId: xsd:string)
+            getDocumentIdsForFilePrefix(prefix: xsd:string, account: xsd:string, comments: xsd:string) -> result: xsd:string[]
+            getDocumentIdsForFilePrefixAsync(prefix: xsd:string, account: xsd:string, comments: xsd:string)
+            getDocumentsForFilePrefix(prefix: xsd:string, account: xsd:string, comments: xsd:string) -> result: ns5:DocumentDetails[]
+            getDocumentsForFilePrefixAsync(prefix: xsd:string, account: xsd:string, comments: xsd:string)
+            getESSExecutionDetails(requestId: xsd:long, jobOptions: xsd:string) -> result: xsd:string
+            getESSExecutionDetailsAsync(requestId: xsd:long, jobOptions: xsd:string)
+            getESSJobStatus(requestId: xsd:long) -> result: xsd:string
+            getESSJobStatusAsync(requestId: xsd:long)
+            getEntityList() -> result: ns6:ServiceViewInfo[]
+            getEntityListAsync()
+            getServiceLastUpdateTime() -> result: ns6:dateTime-Timestamp
+            getServiceLastUpdateTimeAsync()
+            importBulkData(document: ns5:DocumentDetail, jobDetails: ns5:EssJob[], notificationCode: xsd:string, callbackURL: xsd:string, jobOptions: xsd:string) -> result: xsd:long
+            importBulkDataAsync(document: ns5:DocumentDetail, jobDetails: ns5:EssJob[], notificationCode: xsd:string, callbackURL: xsd:string, jobOptions: xsd:string)
+            loadAndImportData(document: ns5:DocumentDetails, jobList: ns5:EssJob[], interfaceDetails: xsd:string, notificationCode: xsd:string, callbackURL: xsd:string) -> result: xsd:long
+            loadAndImportDataAsync(document: ns5:DocumentDetails, jobList: ns5:EssJob[], interfaceDetails: xsd:string, notificationCode: xsd:string, callbackURL: xsd:string)
+            submitESSJobRequest(jobPackageName: xsd:string, jobDefinitionName: xsd:string, paramList: xsd:string[]) -> result: xsd:long
+            submitESSJobRequestAsync(jobPackageName: xsd:string, jobDefinitionName: xsd:string, paramList: xsd:string[])
+            submitJobWithOutput(jobPackageName: xsd:string, jobDefinitionName: xsd:string, callbackURL: xsd:string, paramList: xsd:string[]) -> result: xsd:long
+            submitJobWithOutputAsync(jobPackageName: xsd:string, jobDefinitionName: xsd:string, callbackURL: xsd:string, paramList: xsd:string[])
+            updateInterfaceData(processName: xsd:string, loadRequestId: xsd:string, document: ns6:base64Binary-DataHandler) -> 
+            updateInterfaceDataAsync(processName: xsd:string, loadRequestId: xsd:string, document: ns6:base64Binary-DataHandler)
+            uploadFileToUcm(document: ns5:DocumentDetails) -> result: xsd:string
+            uploadFileToUcmAsync(document: ns5:DocumentDetails)
+
