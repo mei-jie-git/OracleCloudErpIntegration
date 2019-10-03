@@ -1,0 +1,36 @@
+from zeep import Client,Settings
+from zeep.transports import Transport
+from requests.auth import HTTPBasicAuth
+from requests import Session
+from bs4 import BeautifulSoup
+
+#############################################################################
+#submitJobWithOutput(jobPackageName: xsd:string, 
+#                    jobDefinitionName: xsd:string, 
+#                    callbackURL: xsd:string, 
+#                    paramList: xsd:string[])
+#############################################################################
+
+session = Session()
+session.auth = HTTPBasicAuth("username","password")
+transport = Transport(session=session)
+
+settings=Settings(strict=False,xml_huge_tree=True)
+client=Client('https://<hostname>.<domainname>/fscmService/ErpIntegrationService?wsdl',
+              settings=settings,
+              transport=transport)
+
+jobPackageName="/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader"
+jobDefinitionName="InterfaceLoaderController"
+callbackURL=""
+paramList=["16","2370335","N","N","#NULL"]
+
+with client.settings(raw_response=True):
+    response=client.service.submitJobWithOutput(jobPackageName,jobDefinitionName,callbackURL,paramList)
+    if response.status_code == 200:
+        respTxt=response.content.decode('utf-8')
+        bs=BeautifulSoup(respTxt,"html.parser")
+        print(bs.result.text)
+    else:
+        print("Access Error.")
+    
