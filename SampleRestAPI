@@ -1,0 +1,14 @@
+from requests.auth import HTTPBasicAuth
+from requests import Session
+import json
+
+session = Session()
+session.auth = HTTPBasicAuth("username","password")
+
+url="https://<hostname>.<domainname>/fscmRestApi/resources/11.13.18.05/fixedAssetBooksLOV"
+
+resp=session.get(url=url)
+
+result=json.loads(resp.content.decode("utf-8"))
+
+print(result)
